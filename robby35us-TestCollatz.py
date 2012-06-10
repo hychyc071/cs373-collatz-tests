@@ -4,7 +4,7 @@
 # -------------------------------
 # projects/collatz/TestCollatz.py
 # Copyright (C) 2011
-# Glenn P. Downing
+# Glenn P. Downing and Robert Reed
 # -------------------------------
 
 """
@@ -21,7 +21,7 @@ To test the program:
 import StringIO
 import unittest
 
-from Collatz import  collatz_read, collatz_eval, collatz_cycle_length, collatz_print, collatz_solve, _check_range_order, _swap_var, _reset_cache
+from Collatz import  collatz_read, collatz_eval, collatz_cycle_length, collatz_print, collatz_solve
 
 
 # -----------
@@ -153,28 +153,24 @@ class TestCollatz (unittest.TestCase) :
     def test_solve_1 (self) :
         r = StringIO.StringIO("1 10\n100 200\n201 210\n900 1000\n")
         w = StringIO.StringIO()
-        _reset_cache()
         collatz_solve(r, w)
         self.assert_(w.getvalue() == "1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
 
     def test_solve_2(self) :
         r = StringIO.StringIO("10 1\n200 100\n210 201\n1000 900\n")
         w = StringIO.StringIO()
-        _reset_cache()
         collatz_solve(r, w)
         self.assert_(w.getvalue() == "10 1 20\n200 100 125\n210 201 89\n1000 900 174\n")
 
     def test_solve_3 (self) :
         r = StringIO.StringIO("1 10\n")
         w = StringIO.StringIO()
-        _reset_cache()
         collatz_solve(r, w)
         self.assert_(w.getvalue() == "1 10 20\n")
 
     def test_solve_4 (self) :
         r = StringIO.StringIO("")
         w = StringIO.StringIO()
-        _reset_cache()
         collatz_solve(r, w)
         self.assert_(w.getvalue() == "")
         
