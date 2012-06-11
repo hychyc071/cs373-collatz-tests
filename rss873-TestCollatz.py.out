@@ -1,0 +1,18 @@
+.F..................
+======================================================================
+FAIL: test_collatz_cache_2 (__main__.TestCollatz)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "TestCollatz.py", line 168, in test_collatz_cache_2
+    collatz_solve(r, w)
+  File "/Users/Rohan/Desktop/Computers/CS373/Collatz/cs373-collatz/Collatz.py", line 111, in collatz_solve
+    while collatz_read(r, a) :
+  File "/Users/Rohan/Desktop/Computers/CS373/Collatz/cs373-collatz/Collatz.py", line 27, in collatz_read
+    assert a[1] > 0
+AssertionError
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.014s
+
+FAILED (failures=1)
+TestCollatz.py
